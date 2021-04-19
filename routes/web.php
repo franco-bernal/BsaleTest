@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\FullController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Category;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +14,7 @@ use App\Models\Category;
 |
 */
 
-Route::get('/', [FullController::class, 'index']);
+Route::get('/', [ApiController::class, 'index']);
 
 
 // Route::get('/', function () {

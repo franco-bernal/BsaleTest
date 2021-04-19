@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\Product;
+use App\Libraries\ApiTest\ProductApi;
 use Illuminate\Http\Request;
 
-class FullController extends Controller
+class ApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +14,12 @@ class FullController extends Controller
      */
     public function index()
     {
-
-        $category = json_decode(Category::all());
-        $product = json_decode(Product::all());
-        // dd($product);
-        return view('store', compact('category', 'product'));
+        $gs = new ProductApi();
+        // $category = "";
+        $product = $gs->getProductos();
+        dd($gs);
+        // // dd($product);
+        return view('store'); //compact('category', 'product'));
     }
 
     /**
