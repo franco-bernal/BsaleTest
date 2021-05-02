@@ -37,7 +37,7 @@
 
         <section class="hero-section product-space"></section>
         <div id="pagination" class="centrar">
-           
+
         </div>
 
     </div>
@@ -57,6 +57,7 @@
                 type: 'GET',
                 url: "http://localhost:8000/api/" + filtro,
                 success: function(data) {
+                    $('#pagination').html("");
                     if (data == "") {
                         $('.product-space').html(` <br><br><br><br><br><br><br><br>
                          <h1 style="text-align: center; font-size:30px">Sin coincidencias</h1>`);
