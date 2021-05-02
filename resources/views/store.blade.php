@@ -55,7 +55,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: "http://localhost:8000/api/" + filtro,
+                url: "https://devfranco.tk/api/" + filtro,
                 success: function(data) {
                     $('#pagination').html("");
                     if (data == "") {
