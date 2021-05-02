@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Libraries\ApiTest\ProductApi;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -12,82 +14,62 @@ class ApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function category()
     {
-        $gs = new ProductApi();
-        // $category = "";
-        $product = $gs->getProductos();
-        dd($gs);
-        // // dd($product);
-        return view('store'); //compact('category', 'product'));
+        $category = Category::all();
+        return $category;
+    }
+    public function product()
+    {
+        $product = Product::all();
+        return $product;
+    }
+    public function productByCategory()
+    {
+        $categories = $this->category();
+        $products = $this->product();
+
+        $orderByCategory = [];
+
+        // $posicion_coincidencia = strpos($cadena_de_texto, $cadena_buscada);
+        // dd($categories[0]['name']);
+        foreach ($categories as $category) {
+
+            foreach ($products as $product) {
+                if ($product['category'] == $category['id']) {
+                    array_push($orderByCategory, $product);
+                }
+            }
+        }
+
+
+
+        return $orderByCategory;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function filterName($name = 'energetica')
     {
-        //
-    }
+        $products = $this->product();
+        $name = strtolower($name);
+        if ($name == "all") {
+            return $products;
+        } else {
+            $coincidences = [];
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+            foreach ($products as $product) {
+                $existHere = strpos(strtolower($product['name']), $name);
+                if ($existHere === false) {
+                } else {
+                    array_push($coincidences, $product);
+                }
+            }
+            return $coincidences;
+        }
     }
 }
+
+
 
 
 

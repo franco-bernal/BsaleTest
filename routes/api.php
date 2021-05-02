@@ -2,8 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +20,10 @@ use App\Http\Controllers\ProductController;
 // });
 
 
-Route::get('category', [CategoryController::class, 'index']);
-Route::get('product', [ProductController::class, 'index']);
+Route::get('category', [ApiController::class, 'category']);
+Route::get('product', [ApiController::class, 'product']);
+Route::get('bycategory', [ApiController::class, 'productByCategory']);
+Route::get('byname/{name}', [ApiController::class, 'filterName']);
+
+
+// productByCategory()

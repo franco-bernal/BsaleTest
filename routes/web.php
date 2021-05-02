@@ -14,12 +14,7 @@ use App\Http\Controllers\ApiController;
 |
 */
 
-Route::get('/', [ApiController::class, 'index']);
+Route::get('/', function () {
+    return view('store');
+});
 
-
-// Route::get('/', function () {
-
-//     // $category = Category::select('name');
-//     // $category = json_encode($category);
-//     return view('welcome', compact('category'));
-// });
