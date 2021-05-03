@@ -12,8 +12,9 @@ function loadProducts(dataAjax, page = 1) {
     dataPaginate.map((product) => {
         newData += `
     <div class="product-card">
+    <span onclick="loadTable('byfilter/all/${product.category}');" class="bsale-tag reflejo category${product.category}">${product.name_category}</span>
         <div class="product-img">
-         <img src="${imageValid(product.url_image)}" alt="" title="">
+         <img onclick="modalImage('${product.url_image}')" src="${imageValid(product.url_image)}" alt="" title="">
         </div>
         <p class="product-title">${product.name}</p>
         <div class="product-footer">

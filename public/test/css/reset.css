@@ -68,6 +68,8 @@ header {
     width: 100%;
     background-color: rgb(255, 255, 255);
     padding: 0 20vw;
+    margin-bottom: 30px;
+    display: none;
 }
 
 header div:first-child {
@@ -172,6 +174,7 @@ header form input {
 #pagination {
     display: block;
     width: fit-content;
+    margin-bottom: 30px;
 }
 
 #pagination button {
@@ -179,6 +182,62 @@ header form input {
     background-color: white;
     outline: none;
     cursor: pointer;
+}
+
+.bsale-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    padding: 1px 5px;
+    font-size: 12px;
+    opacity: 0.9;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.bsale-tag:hover {
+    border: 1px solid black;
+}
+
+.category1 {
+    background-color: greenyellow;
+    color: green;
+}
+
+.category2 {
+    background-color: rgb(255, 208, 56);
+    color: rgb(0, 0, 0);
+}
+
+.category3 {
+    background-color: rgb(161, 154, 255);
+    color: white;
+}
+
+.category4 {
+    background-color: rgb(98, 250, 255);
+    color: rgb(0, 0, 0);
+}
+
+.category5 {
+    background-color: rgb(71, 119, 0);
+    color: rgb(255, 255, 255);
+}
+
+.category6 {
+    background-color: rgb(255, 47, 151);
+    color: rgb(255, 255, 255);
+}
+
+.bs_cont {
+    background-image: url('');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 610px;
+    height: 480px;
+    display: block;
+    position: relative;
 }
 
 @media (max-width: 768px) {
@@ -193,7 +252,7 @@ header form input {
         font-size: 3.2vw;
     }
     .product-card {
-        width: 23.95%;
+        width: 48.97%;
     }
     .product-footer {
         width: 100%;
@@ -224,5 +283,12 @@ header form input {
         right: 0;
         display: block;
         margin: 0 auto;
+    }
+    .bs_cont {
+        width: 100%;
+        height: 480px;
+        background-image: linear-gradient( rgba(231, 231, 231, 0.308), rgba(143, 143, 143, 0.651)), url(https://assets.jumpseller.com/store/edwardsen/themes/339056/eg1_img_fondo.jpg);
+        background-position: center;
+        background-size: contain;
     }
 }

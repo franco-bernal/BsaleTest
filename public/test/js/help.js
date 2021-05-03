@@ -17,11 +17,21 @@ function numberFormate(value) {
 
 function imageValid(image) {
     if (image == "" || image == null) {
-        return "http://localhost:8000/test/img/default/product_error.jpg";
+        return "https://devfranco.tk/test/img/default/product_error.jpg";
     }
     return image;
 }
 
 function paginate(array, page_size, page_number) {
     return array.slice((page_number - 1) * page_size, page_number * page_size);
+}
+
+function modalImage(image) {
+    bsOpenModal('bs_modal');
+
+    if (image != null && image != "") {
+        $(".bs_cont").css("background-image", `url('${image}')`);
+    } else {
+        $(".bs_cont").css("background-image", `url('https://devfranco.tk/test/img/default/product_error.jpg')`);
+    }
 }

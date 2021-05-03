@@ -8,14 +8,24 @@
     <title>BSale Test</title>
 
     <link rel="stylesheet" href="{{ asset('/test/css/bulma.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/test/css/reset.css') }}">
     <script type="text/javascript" src="{{ asset('/test/js/jquery-3.5.1.min.js') }}"></script>
+
+    <link rel="stylesheet" href="{{ asset('/test/css/bs_modal.css') }}">
+    <script type="text/javascript" src="{{ asset('/test/js/bs_modal.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('/test/css/reset.css') }}">
     <script type="text/javascript" src="{{ asset('/test/js/help.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/test/js/app.js') }}"></script>
+
 
 </head>
 
 <body>
+
+    <div id="bs_modal" class="bs_modal">
+        <a onclick="bsCloseModal('bs_modal')" class="close_modal_bs">x</a>
+        <div id="bs_cont" class="bs_cont">
+        </div>
+    </div>
 
     <div class="hero">
         <header>
@@ -26,7 +36,10 @@
             <div class="centrar">
                 <form>
                     <input type="text" id="txt-name" placeholder="Buscar...">
-                    <button id="btn-name">Buscar</button>
+                    <select id="category" name="estado" aria-placeholder="Estado">
+                        <option value="-1">Home</option>
+                    </select>
+                    <button id="btn-submit">Buscar</button>
                 </form>
 
 
@@ -45,6 +58,7 @@
 
 
     <script>
+        loadSelect();
         loadTable('bycategory');
 
 
@@ -55,7 +69,8 @@
 
             $.ajax({
                 type: 'GET',
-                url: "https://devfranco.tk/api/" + filtro,
+                url: "http://localhost:8000/api/" + filtro,
+                // url: "https://devfranco.tk/api/" + filtro,
                 success: function(data) {
                     $('#pagination').html("");
                     if (data == "") {
@@ -63,6 +78,34 @@
                          <h1 style="text-align: center; font-size:30px">Sin coincidencias</h1>`);
                     } else {
                         loadProducts(data);
+                    }
+                },
+                error: function(error) {
+                    console.log(error);
+                    //$(".body-result").html("Sin información");
+                }
+
+            })
+        }
+
+        function loadSelect() {
+            $.ajax({
+                type: 'GET',
+                url: "http://localhost:8000/api/category",
+                // url: "https://devfranco.tk/api/category",
+                success: function(data) {
+                    $("header").slideDown();
+                    if (data == "") {
+                        alert("nada");
+                    } else {
+                        // $('#category').append(`<option>${data[0]['name']}</option>`);
+                        data.map((category) => {
+                            $('#category').append($("<option>", {
+                                value: category['id'],
+                                text: category['name']
+                            }));
+                        });
+                        console.log(data[0]['name']);
                     }
                 },
                 error: function(error) {

@@ -1,0 +1,37 @@
+.bs_modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.596);
+    position: fixed;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    left: 0;
+    padding: 0;
+    z-index: 9999999999999;
+    overflow: hidden;
+}
+
+.bs_modal .bs_cont {
+    display: block;
+}
+
+.close_modal_bs {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    margin: 0 10px;
+    color: white !important;
+    font-size: 30px;
+    font-family: cursive;
+    cursor: pointer;
+    transition: font-size 0.2s !important;
+    z-index: 999;
+}
+
+.close_modal_bs:hover {
+    font-size: 35px;
+    transition: font-size 0.2s;
+}

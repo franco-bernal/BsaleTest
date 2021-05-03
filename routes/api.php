@@ -23,7 +23,9 @@ use App\Http\Controllers\ApiController;
 Route::get('category', [ApiController::class, 'category']);
 Route::get('product', [ApiController::class, 'product']);
 Route::get('bycategory', [ApiController::class, 'productByCategory']);
-Route::get('byname/{name}', [ApiController::class, 'filterName']);
+
+Route::get('byfilter', [ApiController::class, 'filterName']);
+Route::get('byfilter/{name}/{category}', [ApiController::class, 'filterName']);
 
 
 // productByCategory()
