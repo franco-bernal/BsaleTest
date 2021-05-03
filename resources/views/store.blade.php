@@ -69,8 +69,8 @@
 
             $.ajax({
                 type: 'GET',
-                url: "http://localhost:8000/api/" + filtro,
-                // url: "https://devfranco.tk/api/" + filtro,
+                // url: "http://localhost:8000/api/" + filtro,
+                url: "https://devfranco.tk/api/" + filtro,
                 success: function(data) {
                     $('#pagination').html("");
                     if (data == "") {
@@ -91,8 +91,8 @@
         function loadSelect() {
             $.ajax({
                 type: 'GET',
-                url: "http://localhost:8000/api/category",
-                // url: "https://devfranco.tk/api/category",
+                // url: "http://localhost:8000/api/category",
+                url: "https://devfranco.tk/api/category",
                 success: function(data) {
                     $("header").slideDown();
                     if (data == "") {
