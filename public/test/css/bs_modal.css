@@ -21,7 +21,7 @@
 .close_modal_bs {
     position: absolute;
     top: 0;
-    right: 20px;
+    right: 30px;
     margin: 0 10px;
     color: white !important;
     font-size: 30px;
@@ -34,4 +34,10 @@
 .close_modal_bs:hover {
     font-size: 35px;
     transition: font-size 0.2s;
+}
+@media(max-width:769px){
+    .close_modal_bs {
+        right: 10px;
+    }
+    
 }

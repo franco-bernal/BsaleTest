@@ -31,14 +31,14 @@
     <div class="hero">
         <header>
             <div>
-                <h5>Bsale Test</h5>
+                <h5 onclick="loadTable('bycategory/all/all/asc',1);">Bsale Test</h5>
                 <p>Tienda</p>
             </div>
             <div class="centrar bs-form">
                 <form>
                     <input type="text" id="txt-name" placeholder="Buscar...">
                     <select id="category" name="estado" aria-placeholder="Estado">
-                        <option value="-1">Home</option>
+                        <option value="-1">Categoría</option>
                     </select>
                     <select id="orden" name="orden" aria-placeholder="Orden">
                         <option value="asc">A-Z</option>
@@ -53,6 +53,7 @@
         </header>
 
         <p id="bs-count">Encontrados:<span id="bs-count-cont">0</span></p>
+        <hr>
         <section class="hero-section product-space"></section>
         <div id="pagination" class="centrar">
 
@@ -83,8 +84,8 @@
                 data: {
                     page: page,
                 },
-                url: "http://localhost:8000/api/" + filtro,
-                // url: "https://devfranco.tk/api/" + filtro,
+                // url: "http://localhost:8000/api/" + filtro,
+                url: "https://devfranco.tk/api/" + filtro,
                 success: function(data) {
 
                     $("header").slideDown();
@@ -99,7 +100,6 @@
                 },
                 error: function(error) {
                     console.log(error);
-                    //$(".body-result").html("Sin información");
                 }
 
             })
@@ -112,13 +112,12 @@
                 data: {
                     'page': '1'
                 },
-                url: "http://localhost:8000/api/category",
-                // url: "https://devfranco.tk/api/category",
+                // url: "http://localhost:8000/api/category",
+                url: "https://devfranco.tk/api/category",
                 success: function(data) {
                     if (data == "") {
                         alert("nada");
                     } else {
-                        // $('#category').append(`<option>${data[0]['name']}</option>`);
                         data.map((category) => {
                             $('#category').append($("<option>", {
                                 value: category['id'],
@@ -130,7 +129,6 @@
                 },
                 error: function(error) {
                     console.log(error);
-                    //$(".body-result").html("Sin información");
                 }
 
             })

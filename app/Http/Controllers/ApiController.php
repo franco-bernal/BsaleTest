@@ -23,7 +23,11 @@ class ApiController extends Controller
         return $category;
     }
 
-  
+    public function product(Request $request)
+    {
+        return Product::with('category')->paginate(8);
+    }
+
     //Metodo que procesa los filtros de nombre,categoría y orden
     public function productByCategory($name = "all", $category = "all", $orden = "asc", Request $request)
     {
