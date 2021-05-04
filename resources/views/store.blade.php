@@ -32,7 +32,7 @@
         <header>
             <div>
                 <h5 onclick="loadTable('bycategory/all/all/asc',1);">Bsale Test</h5>
-                <p>Tienda</p>
+                <a href="{{asset('/test/pdf/documentacion-Bsale-test.pdf')}}" style="margin:10px">Documento</a>
             </div>
             <div class="centrar bs-form">
                 <form>
@@ -84,8 +84,7 @@
                 data: {
                     page: page,
                 },
-                // url: "http://localhost:8000/api/" + filtro,
-                url: "https://devfranco.tk/api/" + filtro,
+                url: "{{ url('/api') }}" + "/" + filtro,
                 success: function(data) {
 
                     $("header").slideDown();
@@ -112,8 +111,7 @@
                 data: {
                     'page': '1'
                 },
-                // url: "http://localhost:8000/api/category",
-                url: "https://devfranco.tk/api/category",
+                url: "{{ url('/api/category') }}",
                 success: function(data) {
                     if (data == "") {
                         alert("nada");
