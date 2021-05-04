@@ -1,9 +1,10 @@
-
+//metodo que ayuda a number formate
 function integerValid(value) {
     var RegExPattern = /[0-9]+$/;
     return RegExPattern.test(value);
 }
 
+//funcion que agrega los puntos a los precios
 function numberFormate(value) {
     if (integerValid(value)) {
         var retorno = '';
@@ -15,17 +16,14 @@ function numberFormate(value) {
     return 0;
 }
 
+
+//valida si existe imagen, si no entrega una por default
 function imageValid(image) {
     if (image == "" || image == null) {
         return "https://devfranco.tk/test/img/default/product_error.jpg";
     }
     return image;
 }
-
-function paginate(array, page_size, page_number) {
-    return array.slice((page_number - 1) * page_size, page_number * page_size);
-}
-
 function modalImage(image) {
     bsOpenModal('bs_modal');
 

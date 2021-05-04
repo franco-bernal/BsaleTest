@@ -21,11 +21,11 @@
 .close_modal_bs {
     position: absolute;
     top: 0;
-    right: 30px;
+    right: 20px;
     margin: 0 10px;
     color: white !important;
     font-size: 30px;
-    font-family: cursive;
+    font-family: monospace;
     cursor: pointer;
     transition: font-size 0.2s !important;
     z-index: 999;

@@ -1,3 +1,5 @@
+//modal con fade sólo ocupando javascript vanilla
+//metodo open
 function bsOpenModal(el, display) {
     el = document.getElementById(el);
     el.style.opacity = 0;
@@ -9,8 +11,9 @@ function bsOpenModal(el, display) {
             requestAnimationFrame(fade);
         }
     })();
-    // document.getElementById('bs_modal').style = 'display:flex';
 }
+//modal con fade sólo ocupando javascript vanilla
+
 function bsCloseModal(el) {
     el = document.getElementById(el);
     el.style.opacity = 1;
@@ -21,5 +24,4 @@ function bsCloseModal(el) {
             requestAnimationFrame(fade);
         }
     })();
-    // document.getElementById('bs_modal').style = 'display:none';
 }

@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 
@@ -15,17 +14,7 @@ use App\Http\Controllers\ApiController;
 |
 */
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
 
 Route::get('category', [ApiController::class, 'category']);
 Route::get('product', [ApiController::class, 'product']);
-Route::get('bycategory', [ApiController::class, 'productByCategory']);
-
-Route::get('byfilter', [ApiController::class, 'filterName']);
-Route::get('byfilter/{name}/{category}', [ApiController::class, 'filterName']);
-
-
-// productByCategory()
+Route::get('bycategory/{name}/{category}/{orden}', [ApiController::class, 'productByCategory']);
