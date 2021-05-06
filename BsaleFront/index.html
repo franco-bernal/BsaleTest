@@ -82,12 +82,9 @@
 
             $.ajax({
                 type: 'GET',
-                headers: {
-                    "Access-Control-Allow-Headers": "Content-Type",
-                    "Access-Control-Allow-Origin": "https://devfrancoback-end.tk",
-                    "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
+                "headers": {
+                    "accept": "application/json",
+                    "Access-Control-Allow-Origin": "*"
                 },
                 url: "https://devfrancoback-end.tk/api" + "/" + filtro,
                 success: function (data) {
@@ -113,10 +110,9 @@
         function loadSelect() {
             $.ajax({
                 type: 'GET',
-                headers: {
-                    "Access-Control-Allow-Headers": "Content-Type",
-                    "Access-Control-Allow-Origin": "https://devfrancoback-end.tk",
-                    "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+                "headers": {
+                    "accept": "application/json",
+                    "Access-Control-Allow-Origin": "*"
                 },
                 data: {
                     'page': '1'
