@@ -25,7 +25,6 @@ composer install
 ```
 * Luego generar una nuev APP_KEY en el archivo **.env** corriendo este comando (en la carpeta del proyecto, como el siguiente):
 ```bash
-# the key generated will be stored into APP_KEY variable on your .env file
 php artisan key:generate
 ```
 
@@ -42,6 +41,6 @@ php artisan optimize
 
 ##### Esta aplicación actualmente disponibiliza las siguientes url para consumir
 
-/category  → devuelve todas las categorías
-/product   → devuelve todos los productos
-/bycategory/{name}/{category}/{orden}  → devuelve datos filtrados
+* /category  → devuelve todas las categorías
+* /product   → devuelve todos los productos
+* /bycategory/{name}/{category}/{orden}  → devuelve datos filtrados
