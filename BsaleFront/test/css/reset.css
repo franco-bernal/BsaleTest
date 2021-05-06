@@ -268,7 +268,7 @@ header form input {
 .bs-disable {
     background-color: #363636 !important;
     color: #363636 !important;
-    border: 0.2px solid gray !important;
+    border: none;
     cursor: default !important;
 }
 
