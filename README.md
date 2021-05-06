@@ -1,11 +1,23 @@
 # Bsale Test
 
-### Este es el backend del proyecto BsaleFront
+### Proyectos de postulación
 * en este readme encontrará como instalar la aplicación.
 
+### Objetivo
+
+* Determinar si el candidato está en condiciones de interactuar con una base de datos a través de una
+aplicación web, implementando cliente y servidor.
 
 
-### 1. Set up your environment
+### 1. Clone el repositorio y luego dirijase al proyecto BsaleTestBackend para la instalación
+
+```bash
+git clone https://github.com/OCarvajalMora/laravel-mau.git
+```
+
+
+
+### 2. Set up your environment
 * Duplique el archivo **.env.example** dentro de la misma ubicación y renombrelo a **.env**.
 * Para instalar las dependencias debe usar composer:
 ```bash
