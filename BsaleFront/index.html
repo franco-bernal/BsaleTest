@@ -109,6 +109,10 @@
         function loadSelect() {
             $.ajax({
                 type: 'GET',
+                "headers": {
+                    "accept": "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                },
                 data: {
                     'page': '1'
                 },
