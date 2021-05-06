@@ -18,8 +18,10 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+Route::group(['middleware' => ['cors']], function () {
+    //Rutas a las que se permitirá acceso
 
-
-Route::get('category', [ApiController::class, 'category']);
-Route::get('product', [ApiController::class, 'product']);
-Route::get('bycategory/{name}/{category}/{orden}', [ApiController::class, 'productByCategory']);
+    Route::get('category', [ApiController::class, 'category']);
+    Route::get('product', [ApiController::class, 'product']);
+    Route::get('bycategory/{name}/{category}/{orden}', [ApiController::class, 'productByCategory']);
+});

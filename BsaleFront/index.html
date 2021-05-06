@@ -81,10 +81,14 @@
 
             $.ajax({
                 type: 'GET',
+                headers: {
+                    "accept": "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                },
                 data: {
                     page: page,
                 },
-                url: "http://localhost:8000/api" + "/" + filtro,
+                url: "http://devfrancoback-end.tk/api" + "/" + filtro,
                 success: function (data) {
 
                     $("header").slideDown();
@@ -108,10 +112,14 @@
         function loadSelect() {
             $.ajax({
                 type: 'GET',
+                headers: {
+                    "accept": "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                },
                 data: {
                     'page': '1'
                 },
-                url: "http://localhost:8000/api/category",
+                url: "http://devfrancoback-end.tk/api/category",
                 success: function (data) {
                     if (data == "") {
                         alert("nada");
