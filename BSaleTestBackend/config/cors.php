@@ -17,7 +17,7 @@ return [
 
     // Con * indicamos que acepte todos, o podemos indicar especificamente alguno
 
-        'paths' => ['api/*'],
+    // 'paths' => ['api/*'],
 
 
 ];
