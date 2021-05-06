@@ -85,9 +85,6 @@
                     "accept": "application/json",
                     "Access-Control-Allow-Origin": "*"
                 },
-                data: {
-                    page: page,
-                },
                 url: "http://devfrancoback-end.tk/api" + "/" + filtro,
                 success: function (data) {
 
@@ -112,10 +109,6 @@
         function loadSelect() {
             $.ajax({
                 type: 'GET',
-                headers: {
-                    "accept": "application/json",
-                    "Access-Control-Allow-Origin": "*"
-                },
                 data: {
                     'page': '1'
                 },
