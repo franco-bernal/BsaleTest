@@ -85,7 +85,9 @@
                 headers: {
                     "Access-Control-Allow-Headers": "Content-Type",
                     "Access-Control-Allow-Origin": "https://devfrancoback-end.tk",
-                    "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+                    "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
                 },
                 url: "https://devfrancoback-end.tk/api" + "/" + filtro,
                 success: function (data) {
