@@ -20,12 +20,12 @@ class ApiController extends Controller
     public function category(Request $request)
     {
         $category = Category::all();
-        return $category;
+        return  response()->json(['status' => 'ok', 'data' => $category], 200);
     }
 
     public function product(Request $request)
     {
-        return Product::with('category')->paginate(8);
+        return  response()->json(['status' => 'ok', 'data' => Product::with('category')->paginate(8)], 200);
     }
 
     //Metodo que procesa los filtros de nombre,categoría y orden
@@ -46,12 +46,11 @@ class ApiController extends Controller
             ->with('category');
 
         if ($orden == "mas") {
-            return $products->orderBy('price', "desc")->paginate(7);
+            return  response()->json(['status' => 'ok', 'data' => $products->orderBy('price', "desc")->paginate(7)], 200);
         }
         if ($orden == "menos") {
-            return $products->orderBy('price', "asc")->paginate(7);
+            return  response()->json(['status' => 'ok', 'data' => $products->orderBy('price', "asc")->paginate(7)], 200);
         }
-
-        return $products->orderBy('category', $orden)->paginate(7);
+        return  response()->json(['status' => 'ok', 'data' => $products->orderBy('category', $orden)->paginate(7)], 200);
     }
 }
