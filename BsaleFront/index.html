@@ -83,10 +83,11 @@
             $.ajax({
                 type: 'GET',
                 headers: {
-                    "accept": "application/json",
-                    "Access-Control-Allow-Origin": "*"
+                    "Access-Control-Allow-Headers": "Content-Type",
+                    "Access-Control-Allow-Origin": "https://devfrancoback-end.tk",
+                    "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
                 },
-                url: "http://devfrancoback-end.tk/api" + "/" + filtro,
+                url: "https://devfrancoback-end.tk/api" + "/" + filtro,
                 success: function (data) {
 
                     $("header").slideDown();
@@ -110,14 +111,15 @@
         function loadSelect() {
             $.ajax({
                 type: 'GET',
-                "headers": {
-                    "accept": "application/json",
-                    "Access-Control-Allow-Origin": "*"
+                headers: {
+                    "Access-Control-Allow-Headers": "Content-Type",
+                    "Access-Control-Allow-Origin": "https://devfrancoback-end.tk",
+                    "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
                 },
                 data: {
                     'page': '1'
                 },
-                url: "http://devfrancoback-end.tk/api/category",
+                url: "https://devfrancoback-end.tk/api/category",
                 success: function (data) {
                     if (data == "") {
                         alert("nada");
